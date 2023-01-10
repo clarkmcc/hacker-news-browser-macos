@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import LinkPresentation
 
 enum StorySortType {
     case top
@@ -148,6 +149,12 @@ struct Story {
     
     var timeAgo: String {
         return getTimeAgo(time: self.time)
+    }
+    
+    var metadata: LPLinkMetadata {
+        var metadata = LPLinkMetadata();
+        metadata.originalURL = self.url;
+        return metadata
     }
 }
 

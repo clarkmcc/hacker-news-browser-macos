@@ -23,6 +23,8 @@
 		EE91D900296CC27A00E76895 /* ListThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91D8FF296CC27A00E76895 /* ListThumbnailView.swift */; };
 		EE91D902296CCB0B00E76895 /* HackerNewsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE91D901296CCB0B00E76895 /* HackerNewsClient.swift */; };
 		EE91D906296CDE6200E76895 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EE91D905296CDE6200E76895 /* Info.plist */; };
+		EEC32EC9296D1A6500B126DF /* AuthorTimestampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC32EC8296D1A6500B126DF /* AuthorTimestampView.swift */; };
+		EEC32ECB296D1ECD00B126DF /* ScoreCommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC32ECA296D1ECD00B126DF /* ScoreCommentsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		EE91D8FF296CC27A00E76895 /* ListThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListThumbnailView.swift; sourceTree = "<group>"; };
 		EE91D901296CCB0B00E76895 /* HackerNewsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerNewsClient.swift; sourceTree = "<group>"; };
 		EE91D905296CDE6200E76895 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC32EC8296D1A6500B126DF /* AuthorTimestampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorTimestampView.swift; sourceTree = "<group>"; };
+		EEC32ECA296D1ECD00B126DF /* ScoreCommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreCommentsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,7 @@
 			children = (
 				EE91D8D6296B823A00E76895 /* HackerNews */,
 				EE91D8D5296B823A00E76895 /* Products */,
+				EEC32ECC296D21D500B126DF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +112,8 @@
 				EE144000296CDFB400B84370 /* StoriesView.swift */,
 				EE144002296CE22900B84370 /* StoryDetailView.swift */,
 				EE144004296CE62D00B84370 /* CommentView.swift */,
+				EEC32EC8296D1A6500B126DF /* AuthorTimestampView.swift */,
+				EEC32ECA296D1ECD00B126DF /* ScoreCommentsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -116,6 +123,13 @@
 			children = (
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		EEC32ECC296D21D500B126DF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,10 +215,12 @@
 			files = (
 				EE91D8DA296B823A00E76895 /* ContentView.swift in Sources */,
 				EE91D8E9296B89CA00E76895 /* SettingsView.swift in Sources */,
+				EEC32EC9296D1A6500B126DF /* AuthorTimestampView.swift in Sources */,
 				EE91D8E7296B82E800E76895 /* SidebarView.swift in Sources */,
 				EE91D8D8296B823A00E76895 /* HackerNewsApp.swift in Sources */,
 				EE144003296CE22900B84370 /* StoryDetailView.swift in Sources */,
 				EE91D900296CC27A00E76895 /* ListThumbnailView.swift in Sources */,
+				EEC32ECB296D1ECD00B126DF /* ScoreCommentsView.swift in Sources */,
 				EE144001296CDFB400B84370 /* StoriesView.swift in Sources */,
 				EE91D902296CCB0B00E76895 /* HackerNewsClient.swift in Sources */,
 				EE144005296CE62D00B84370 /* CommentView.swift in Sources */,

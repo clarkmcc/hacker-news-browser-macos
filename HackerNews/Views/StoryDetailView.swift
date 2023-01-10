@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import LinkPresentation
+
 
 struct StoryDetailView: View {
     var story: Story
@@ -13,38 +15,35 @@ struct StoryDetailView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 3) {
-            Text(story.title).font(.headline)
-            Text(story.url.absoluteString).font(.caption).foregroundColor(.blue)
-            Text("by \(story.by) \(story.timeAgo)").font(.caption)
+            // Title
+            Text(story.title)
+                .fontWeight(.black)
+                .font(.system(.title, design: .rounded))
+    
+            // Link
+            Link(destination: story.url, label: {
+                Text(story.url.absoluteString).font(.caption).foregroundColor(.blue)
+            })
             
-            HStack {
-                // Likes
-                HStack {
-                    Image(systemName: "arrowtriangle.up.fill")
-                    Text("\(story.score)").fontWeight(.heavy)
-                }.padding(.trailing, 10)
-                
-                // Comments
-                HStack {
-                    Image(systemName: "message.fill")
-                    Text("\(story.descendants)").fontWeight(.heavy)
-                }
-            }
+            // Author and timestamp
+            AuthorTimestampView(author: story.by, timestamp: story.time, variant: .subtitle)
             
-            Divider().padding([.top, .bottom], 10)
+            // Scorecard
+            ScoreCommentsView(score: story.score, comments: story.descendants)
             
+            Divider().padding([.top], 10)
+            
+            // Comments
             List(comments) {comment in
-                CommentView(comment: comment)
-            }.listStyle(.inset)
-//            ForEach(comments) { comment in
-                
-//            }
-            Spacer()
+                CommentView(comment: comment, storyAuthor: story.by)
+            }
         }
-        .padding(20)
+        .padding([.leading, .trailing, .top], 20)
         .onAppear {
             loadComments()
         }
+//        .edgesIgnoringSafeArea(.all)
+        .background(Color.white)
     }
     
     func loadComments() {

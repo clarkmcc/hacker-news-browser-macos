@@ -27,20 +27,9 @@ struct StoryRowView: View {
             
             VStack(alignment: .leading, spacing: 2) {
                 Text(item.title!).font(.headline)
-                Text("by \(item.by!) \(item.timeAgo)").font(.subheadline)
-                HStack {
-                    // Likes
-                    HStack {
-                        Image(systemName: "arrowtriangle.up.fill")
-                        Text("\(item.score!)").fontWeight(.heavy)
-                    }.padding(.trailing, 10)
-                    
-                    // Comments
-                    HStack {
-                        Image(systemName: "message.fill")
-                        Text("\(item.descendants ?? 0)").fontWeight(.heavy)
-                    }
-                }
+                // Text("by \(item.by!) \(item.timeAgo)").font(.subheadline)
+                AuthorTimestampView(author: item.by!, timestamp: item.time!, variant: .caption)
+                ScoreCommentsView(score: item.score!, comments: item.descendants!)
             }.onAppear {
                 getThumbnailLink()
             }

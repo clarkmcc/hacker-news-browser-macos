@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SidebarView: View {
+    @State private var selectedView: Int? = 0
+    
     var body: some View {
         NavigationView {
             List {
@@ -15,22 +17,22 @@ struct SidebarView: View {
                 Text("News")
                 //Navigation links
                 Group{
-                    NavigationLink(destination: StoriesView(type: .top)) {
+                    NavigationLink(destination: StoriesView(type: .top), tag: 0, selection: self.$selectedView) {
                         Label("Top Stories", systemImage: "newspaper")
                     }
-                    NavigationLink(destination: StoriesView(type: .best)) {
+                    NavigationLink(destination: StoriesView(type: .best), tag: 1, selection: self.$selectedView) {
                         Label("Best Stories", systemImage: "star")
                     }
-                    NavigationLink(destination: StoriesView(type: .new)) {
+                    NavigationLink(destination: StoriesView(type: .new), tag: 2, selection: self.$selectedView) {
                         Label("New Stories", systemImage: "flame")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(), tag: 3, selection: self.$selectedView) {
                         Label("Ask HN", systemImage: "bubble.left.and.bubble.right")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(), tag: 4, selection: self.$selectedView) {
                         Label("Show HN", systemImage: "play")
                     }
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(), tag: 5, selection: self.$selectedView) {
                         Label("Jobs", systemImage: "briefcase")
                     }
                 }
